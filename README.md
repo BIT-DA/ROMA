@@ -1,7 +1,15 @@
 # ROMA
 "ROMA: Cross-Domain Region Similarity Matching for Unpaired Nighttime Infrared to Daytime Visible Video Translation"
 
-**Translation Examples:**
+**Examples of Object Detection:**
 
-<iframe height=498 width=510 autoloop=autoloop src="./videos/supplementary_detection_1.mp4">
+![detection1](./images/detection1.gif)
+
+![](./images/detection2.gif)
+
+**Examples of Video Fusion**
+
+![fusion](./images/fusion.gif)
+
+More experimental results can be obtained by contacting us.
 

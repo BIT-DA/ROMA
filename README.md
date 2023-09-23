@@ -1,5 +1,5 @@
 # ROMA
-This repository is the official Pytorch implementation for ACMMM2022 paper
+This repository is the official Pytorch implementation for ACM MM'22 paper
 "ROMA: Cross-Domain Region Similarity Matching for Unpaired Nighttime Infrared to Daytime Visible Video Translation".[[Arxiv]](https://arxiv.org/abs/2204.12367)
 
 **Examples of Object Detection:**
@@ -16,9 +16,26 @@ More experimental results can be obtained by contacting us.
 
 # Introduction
 
-## Abstract
+## Method
+![Method](images/method_final.jpg)
 
-Infrared cameras are often utilized to enhance the night vision since the visible light cameras exhibit inferior efficacy without sufficient illumination. However, infrared data possesses inadequate color contrast and representation ability attributed to its intrinsic heat-related imaging principle. This makes it arduous to capture and analyze information for human beings, meanwhile hindering its application. Although, the domain gaps between unpaired nighttime infrared and daytime visible videos are even huger than paired ones that captured at the same time, establishing an effective translation mapping will greatly contribute to various fields. In this case, the structural knowledge within nighttime infrared videos and semantic information contained in the translated daytime visible pairs could be utilized simultaneously. To this end, we propose a tailored framework **ROMA** that couples with our introduced cRoss-domain regiOn siMilarity mAtching technique for bridging the huge gaps. To be specific, ROMA could efficiently translate the unpaired nighttime infrared videos into fine-grained daytime visible ones, meanwhile maintain the spatiotemporal consistency via matching the cross-domain region similarity. Furthermore, we design a multiscale region-wise discriminator to distinguish the details from synthesized visible results and real references. Extensive experiments and evaluations for specific applications indicate ROMA outperforms the state-of-the-art methods.  Moreover, we provide a new and challenging dataset encouraging further research for unpaired nighttime infrared and daytime visible video translation, named *InfraredCity*. In particular, it consists of 9 long video clips including City, Highway and Monitor scenarios. All clips could be split into $579,984$ frames in total, which are $20$ times larger than the recently released daytime infrared-to-visible dataset IRVI.
+- The domain gaps between unpaired nighttime infrared and daytime visible videos are even huger than paired ones that captured at the same time, establishing an effective translation mapping will greatly contribute to various fields.
+- Our proposed cross-similarity, which are calculated across domains, could make the generative process focus on learning the content of structural correspondence between real and synthesized frames, getting rid of the negative effects of different styles.
+
+
+
+## Training
+The following is the required structure of dataset. For the video mode, the input of a single data is the result of concatenating two adjacent frames; for the image mode, the input of a single data is a single image.
+```
+Video/Image mode:
+  trainA: \Path\of\trainA
+  trainB: \Path\of\trainB
+
+```
+Concrete examples of the training and testing are shown in the script files `./scripts/train.sh` and `./scripts/test.sh`, respectively.
+
+
+
 
 ## InfraredCity and InfraredCity-Lite Dataset
 
@@ -90,3 +107,4 @@ Infrared cameras are often utilized to enhance the night vision since the visibl
 </table>
 
 The datasets and their more details are available in [InfiRay](http://openai.raytrontek.com/apply/Infrared_city.html/).
+

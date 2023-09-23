@@ -25,7 +25,7 @@ More experimental results can be obtained by contacting us.
 
 
 ## Training
-The following is the required structure of dataset. For the video mode, the input of a single data is the result of concatenating two adjacent frames; for the image mode, the input of a single data is a single image.
+The following is the required structure of dataset. For the video mode, the input of a single data is the result of concatenating **two adjacent frames**; for the image mode, the input of a single data is **a single image**.
 ```
 Video/Image mode:
   trainA: \Path\of\trainA
@@ -108,3 +108,35 @@ Concrete examples of the training and testing are shown in the script files `./s
 
 The datasets and their more details are available in [InfiRay](http://openai.raytrontek.com/apply/Infrared_city.html/).
 
+
+### Citation
+If you find our work useful in your research or publication, please cite our work:
+```
+@inproceedings{ROMA2022,
+  title     = {ROMA: Cross-Domain Region Similarity Matching for Unpaired Nighttime Infrared to Daytime Visible Video Translation},
+  author    = {Zhenjie Yu and Kai Chen and Shuang Li and Bingfeng Han and Chi Harold Liu and Shuigen Wang},
+  booktitle = {ACM MM},
+  pages     = {5294--5302},
+  year      = {2022}
+}
+```
+
+#### Acknowledgements
+This code borrows heavily from the PyTorch implementation of [Cycle-GAN and Pix2Pix](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix) and [CUT](https://github.com/taesungp/contrastive-unpaired-translation).  
+A huge thanks to them!
+```
+@inproceedings{CycleGAN2017,
+  title     = {Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networkss},
+  author    = {Zhu, Jun-Yan and Park, Taesung and Isola, Phillip and Efros, Alexei A},
+  booktitle = {ICCV},
+  year      = {2017}
+}
+
+@inproceedings{CUT2020,
+  author       = {Taesung Park and Alexei A. Efros and Richard Zhang and Jun{-}Yan Zhu},
+  title        = {Contrastive Learning for Unpaired Image-to-Image Translation},
+  booktitle    = {ECCV},
+  pages        = {319--345},
+  year         = {2020},
+}
+```
